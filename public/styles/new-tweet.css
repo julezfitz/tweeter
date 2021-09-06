@@ -1,0 +1,40 @@
+
+.tweetButton {
+  background-color: #4056A1;
+  color: #FFFF;
+  font-size: 20px;
+}
+
+.bottomTweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+#tweet-text {
+  background-color: inherit;
+  border-top: none;
+  border-left: none;
+  border-right:none;
+  border-width: 3px;
+  margin-bottom: .5em;
+  height: 2em;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#hum {
+  font-weight: bold;
+  font-size: 20px;
+  color: grey
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter {
+  font-size: 20px;
+}
