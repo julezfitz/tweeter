@@ -4,6 +4,9 @@ nav {
   color: #FFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
 }
 
 span {
