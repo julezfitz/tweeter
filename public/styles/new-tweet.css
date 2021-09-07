@@ -35,6 +35,12 @@
   flex-direction: column;
 }
 
+textarea {
+  overflow-y: scroll;
+  height: 20px;
+  resize: none;
+}
+
 .counter {
   font-size: 20px;
 }
