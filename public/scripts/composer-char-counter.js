@@ -8,6 +8,8 @@ $(function () {
 
     if (countVal < 0) {
       formLowDiv.children(".counter").css({ "color": "red" });
+    } else {
+      formLowDiv.children(".counter").css({ "color": #545149 });
     }
   });
 });
