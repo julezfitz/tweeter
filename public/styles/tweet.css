@@ -13,13 +13,13 @@ article.tweet:hover {
 }
 
 article.tweet header {
-font-size: 20px;  
-font-weight: lighter;
-display: flex;
+  font-size: 20px;  
+  font-weight: lighter;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 1em;
-  padding-right: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 article.tweet hr {
@@ -47,7 +47,7 @@ article.tweet footer {
 .tweet-text {
   padding-left: 0.5em;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 21px;
   color: black;
 }
 
@@ -61,6 +61,20 @@ article.tweet footer {
   color: goldenrod
 }
 
-.need_to_be_rendered {
+.time {
   margin-top: 0;
+}
+
+.profile-pic {
+  width: 40px;
+  height: auto;
+  align-self: center;
+  margin-right: 0.5em;
+}
+
+.username-pic{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-items: center;
 }

@@ -23,7 +23,6 @@ span {
   display: flex;
   float: right;
   flex-direction: column;
-  float: right;
 }
 
 .navArrow {
