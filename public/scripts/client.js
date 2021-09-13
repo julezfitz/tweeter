@@ -1,6 +1,6 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
+$(function () {
+  const render = document.querySelector('.need_to_be_rendered');
+  const time = timeago.format(new Date());
+  render.innerHTML += time;
+});

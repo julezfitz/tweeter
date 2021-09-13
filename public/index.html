@@ -23,9 +23,11 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -48,7 +50,7 @@
     </div>
   </nav>
 
-  <header>
+  <header class = "profile">
       <div class = "imgCont">
         <img class = "profPic" src="/images/profile-hex.png">
       </div>
@@ -62,7 +64,6 @@
   <main class="container">
 
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <form class="form" action="/tweets" method="POST">
         <label for="tweet-text" id = "hum">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
@@ -71,6 +72,26 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+
+    <section class = "tweet-container">
+      <article class = "tweet">
+       <header>
+         <p>Newton</p>
+         <p class = "username">@SirIsaac</p>
+        
+        </header> 
+        <p class = "tweet-text">If I have seen further it is by standing on the shoulders of giants</p>
+        <hr>
+        <footer>
+          <p class = "need_to_be_rendered"></p>
+          <div class = "social">
+            <i class="fas fa-solid fa-flag"></i>
+            <i class="fas fa-solid fa-retweet"></i>
+            <i class="fas fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </section>
 
     <br>
