@@ -60,7 +60,7 @@ const errorMessage = function (error) {
   return $error;
 };
 
-$(function () {
+$(() => {
   loadTweets();
 
   $('.form').submit(function (event) {
@@ -71,6 +71,7 @@ $(function () {
 
     //clear an error message if one is already displayed
     if ($('.errorMessages')) {
+      $('.error').hide();
       errorDiv.empty();
     };
 

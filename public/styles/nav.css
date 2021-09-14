@@ -25,10 +25,24 @@ span {
   flex-direction: column;
 }
 
+@keyframes updown {
+  0% {
+    transform: translateY(-30%);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(-30%);
+  }
+}
+
 .navArrow {
   color:crimson;
   display: flex;
   justify-content: center;
+  animation: updown 2s ease infinite;
+
 }
 
 .slogan {
