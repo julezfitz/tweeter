@@ -36,30 +36,40 @@ const createTweetElement = function (data) {
 
 const renderTweets = function (tweetArray) {
   const tweetContain = $('.tweet-container');
-  for (const key in tweetArray) {
-    let $tweet = createTweetElement(tweetArray[key]);
+
+  const reverseTweets = tweetArray.reverse();
+
+  for (const key in reverseTweets) {
+    let $tweet = createTweetElement(reverseTweets[key]);
     tweetContain.append($tweet);
   }
 };
 
 $(function () {
-  const tweetButton = $('.tweetButton');
-  //$(tweetButton).click()
   loadTweets();
 
   $('.form').submit(function (event) {
     event.preventDefault();
-    const serializedTweet = $(this).serialize();
 
-    request = $.ajax({
-      url: "/tweets",
-      type: "post",
-      data: serializedTweet
-    });
+    // if field is empty or exceeds character limit, alert errors
+    if ($.trim($('#tweet-text').val()) === "") {
+      alert("Please enter a tweet");
+    } else if ($('#tweet-text').val().length > 140) {
+      alert("Message too long! Please shorten your tweet");
+    } else {
 
-    //empty the form, delete all the tweets and reload them from /tweets
-    $(".form")[0].reset();
-    $('.tweet-container').empty();
-    loadTweets();
+      const serializedTweet = $(this).serialize();
+      request = $.ajax({
+        url: "/tweets",
+        type: "post",
+        data: serializedTweet
+      })
+        //empty the form, delete all the tweets and reload them from /tweets
+        .then(function (msg) {
+          $(".form")[0].reset();
+          $('.tweet-container').empty();
+          loadTweets();
+        });
+    }
   });
 });

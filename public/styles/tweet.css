@@ -49,6 +49,8 @@ article.tweet footer {
   font-weight: 500;
   font-size: 21px;
   color: black;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .social i {
