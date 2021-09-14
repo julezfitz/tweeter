@@ -1,29 +1,9 @@
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+const loadTweets = function () {
+  $.get('/tweets', function (tweets, status) {
+    renderTweets(tweets);
+  });
+};
 
 const createTweetElement = function (data) {
   let timeStamp = timeago.format(data.created_at);
@@ -65,9 +45,9 @@ const renderTweets = function (tweetArray) {
 $(function () {
   const tweetButton = $('.tweetButton');
   //$(tweetButton).click()
-  renderTweets(data);
+  loadTweets();
 
-  $(".form").submit(function (event) {
+  $('.form').submit(function (event) {
     event.preventDefault();
     const serializedTweet = $(this).serialize();
 
@@ -77,6 +57,9 @@ $(function () {
       data: serializedTweet
     });
 
+    //empty the form, delete all the tweets and reload them from /tweets
     $(".form")[0].reset();
+    $('.tweet-container').empty();
+    loadTweets();
   });
 });
