@@ -5,6 +5,12 @@ const loadTweets = function () {
   });
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = function (data) {
   let timeStamp = timeago.format(data.created_at);
 
@@ -14,12 +20,12 @@ const createTweetElement = function (data) {
  <header>
          <div class = "username-pic">
          <img class = "profile-pic" src = ${data.user.avatars}>
-         <p>${data.user.name}</p>
+         <p>${escape(data.user.name)}</p>
          </div>
-         <p class = "username">${data.user.handle}</p>
+         <p class = "username">${escape(data.user.handle)}</p>
         </header> 
 
-        <p class = "tweet-text">${data.content.text}</p>
+        <p class = "tweet-text">${escape(data.content.text)}</p>
         <hr>
         <footer>
           <p class = "time">${timeStamp}</p>
@@ -59,17 +65,16 @@ $(function () {
     } else {
 
       const serializedTweet = $(this).serialize();
-      request = $.ajax({
+      $.ajax({
         url: "/tweets",
         type: "post",
         data: serializedTweet
-      })
+      }).then(function () {
         //empty the form, delete all the tweets and reload them from /tweets
-        .then(function (msg) {
-          $(".form")[0].reset();
-          $('.tweet-container').empty();
-          loadTweets();
-        });
+        $(".form")[0].reset();
+        $('.tweet-container').empty();
+        loadTweets();
+      });
     }
   });
 });
