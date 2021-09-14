@@ -36,6 +36,10 @@
   margin-top: 2em;
 }
 
+textarea:focus {
+  outline-width: 0;
+}
+
 textarea {
   overflow-y: scroll;
   height: 20px;
@@ -67,4 +71,8 @@ textarea {
 
 .errorMessages > * {
 margin-right: 8px;
+}
+
+.new-tweet{
+  display: none;
 }

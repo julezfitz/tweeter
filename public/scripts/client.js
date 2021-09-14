@@ -63,6 +63,15 @@ const errorMessage = function (error) {
 $(() => {
   loadTweets();
 
+  $('.rightNav').click(() => {
+    if ($('.new-tweet').is(":hidden")) {
+      $('.new-tweet').slideDown("fast");
+      $('#tweet-text').focus();
+    } else {
+      $('.new-tweet').slideUp("fast");
+    }
+  });
+
   $('.form').submit(function (event) {
     event.preventDefault();
 
@@ -71,7 +80,7 @@ $(() => {
 
     //clear an error message if one is already displayed
     if ($('.errorMessages')) {
-      $('.error').hide();
+      $('.error').slideUp();
       errorDiv.empty();
     };
 
@@ -87,12 +96,16 @@ $(() => {
       $.ajax({
         url: "/tweets",
         type: "post",
-        data: serializedTweet
+        data: serializedTweet,
+        error: (error) => {
+          console.log(error);
+        }
       }).then(function () {
         //empty the form, delete all the tweets and reload them from /tweets
         $(".form")[0].reset();
         $('.tweet-container').empty();
-        $('.error').hide();
+        $('.new-tweet').slideUp();
+        $('.error').slideUp();
         errorDiv.empty();
         loadTweets();
       });
