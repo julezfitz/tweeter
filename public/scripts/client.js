@@ -51,6 +51,15 @@ const renderTweets = function (tweetArray) {
   }
 };
 
+const errorMessage = function (error) {
+  const $error =
+    $(`<div class="errorMessages">
+  <i class="fas fa-exclamation-circle"></i>
+  <p>${error}</p>
+  </div>`);
+  return $error;
+};
+
 $(function () {
   loadTweets();
 
@@ -58,10 +67,17 @@ $(function () {
     event.preventDefault();
 
     // if field is empty or exceeds character limit, alert errors
+    const errorDiv = $('.error');
+
+    //clear an error message if one is already displayed
+    if ($('.errorMessages')) {
+      errorDiv.empty();
+    };
+
     if ($.trim($('#tweet-text').val()) === "") {
-      alert("Please enter a tweet");
+      errorDiv.append(errorMessage("Please enter a tweet"));
     } else if ($('#tweet-text').val().length > 140) {
-      alert("Message too long! Please shorten your tweet");
+      errorDiv.append(errorMessage("Message too long! Please shorten your tweet"));
     } else {
 
       const serializedTweet = $(this).serialize();
@@ -73,6 +89,7 @@ $(function () {
         //empty the form, delete all the tweets and reload them from /tweets
         $(".form")[0].reset();
         $('.tweet-container').empty();
+        errorDiv.empty();
         loadTweets();
       });
     }
