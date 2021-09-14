@@ -66,7 +66,7 @@ $(function () {
   $('.form').submit(function (event) {
     event.preventDefault();
 
-    // if field is empty or exceeds character limit, alert errors
+    // if field is empty or exceeds character limit, display errors
     const errorDiv = $('.error');
 
     //clear an error message if one is already displayed
@@ -76,8 +76,10 @@ $(function () {
 
     if ($.trim($('#tweet-text').val()) === "") {
       errorDiv.append(errorMessage("Please enter a tweet"));
+      $('.error').slideDown("fast");
     } else if ($('#tweet-text').val().length > 140) {
       errorDiv.append(errorMessage("Message too long! Please shorten your tweet"));
+      $('.error').slideDown("fast");
     } else {
 
       const serializedTweet = $(this).serialize();
@@ -89,6 +91,7 @@ $(function () {
         //empty the form, delete all the tweets and reload them from /tweets
         $(".form")[0].reset();
         $('.tweet-container').empty();
+        $('.error').hide();
         errorDiv.empty();
         loadTweets();
       });

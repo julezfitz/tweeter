@@ -46,6 +46,10 @@ textarea {
   font-size: 20px;
 }
 
+.error{
+  display: none;
+}
+
 .errorMessages {
   background-color: rgb(236, 147, 147);
   color: white;
