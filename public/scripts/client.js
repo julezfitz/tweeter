@@ -72,6 +72,10 @@ $(() => {
     }
   });
 
+  $('#backToTop').click(() => {
+    window.scrollTo(0, 0);
+  });
+
   //toggles the view of the create tweet div using the 'write a new tweet' area
   $('.rightNav').click(() => {
     if ($('.new-tweet').is(":hidden")) {
@@ -92,7 +96,7 @@ $(() => {
     if ($('.errorMessages')) {
       $('.error').slideUp();
       errorDiv.empty();
-    };
+    }
 
     if ($.trim($('#tweet-text').val()) === "") {
       errorDiv.append(errorMessage("Please enter a tweet"));
