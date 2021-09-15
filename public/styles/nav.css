@@ -59,6 +59,7 @@ span {
 .pointer {cursor: pointer;}
 
 .upArrow{
+  display: none;
   z-index: 0;
   bottom: 0;
   right:1%;
