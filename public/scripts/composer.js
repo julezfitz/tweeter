@@ -26,5 +26,7 @@ $(() => {
 
   $('#backToTop').click(() => {
     window.scrollTo(0, 0);
+    $('.new-tweet').slideDown("fast");
+    $('#tweet-text').focus();
   });
 });
