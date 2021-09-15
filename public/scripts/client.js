@@ -63,19 +63,6 @@ const errorMessage = function (error) {
 $(() => {
   loadTweets();
 
-  //handles scroll to top button appearance
-  $(document).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $('.upArrow:hidden').stop(true, true).fadeIn();
-    } else {
-      $('.upArrow').stop(true, true).fadeOut();
-    }
-  });
-
-  $('#backToTop').click(() => {
-    window.scrollTo(0, 0);
-  });
-
   //toggles the view of the create tweet div using the 'write a new tweet' area
   $('.rightNav').click(() => {
     if ($('.new-tweet').is(":hidden")) {
@@ -114,7 +101,7 @@ $(() => {
         error: (error) => {
           console.log(error);
         }
-      }).then(function () {
+      }).then(() => {
         //empty the form, delete all the tweets and reload them from /tweets
         $(".form")[0].reset();
         $('.tweet-container').empty();

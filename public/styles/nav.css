@@ -42,7 +42,7 @@ span {
   display: flex;
   justify-content: center;
   animation: updown 2s ease infinite;
-
+  display: visible;
 }
 
 .slogan {
