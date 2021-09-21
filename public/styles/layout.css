@@ -35,6 +35,10 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ .container {
+  padding-top: 380px;
+ }
+
  @media only screen and (min-width: 1024px) {
   body {
     display: flex;
