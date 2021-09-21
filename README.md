@@ -6,7 +6,7 @@ A pre-programmed user and profile picture is set, and tweets can be written and 
 "Write a new tweet" toggles the view of the tweet input field. An up button is also present once users scroll down the page. 
 This page has a responsive design and changes view based on device and screen width.
 
-###Desktop View
+##### Desktop View
 
 
 This project was created to fulfill my Lighthouse Labs program requirements, and included practicing HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express and MongoDB back-end skills.
