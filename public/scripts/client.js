@@ -17,30 +17,33 @@ const createTweetElement = function (data) {
   const $tweet =
     $(`<article class="tweet">
 
- <header>
-         <div class = "username-pic">
-         <img class = "profile-pic" src = ${data.user.avatars}>
-         <p>${escape(data.user.name)}</p>
-         </div>
-         <p class = "username">${escape(data.user.handle)}</p>
-        </header> 
+  <header>
+    <div class = "username-pic">
+      <img class = "profile-pic" src = ${data.user.avatars} alt = "user avatar character">
+      <p>${escape(data.user.name)}</p>
+    </div>
+      <p class = "username">${escape(data.user.handle)}</p>
+  </header> 
 
-        <p class = "tweet-text">${escape(data.content.text)}</p>
-        <hr>
-        <footer>
-          <p class = "time">${timeStamp}</p>
-          <div class = "social">
-            <i class="fas fa-solid fa-flag"></i>
-            <i class="fas fa-solid fa-retweet"></i>
-            <i class="fas fa-solid fa-heart"></i>
-          </div>
-        </footer>
+  <p class = "tweet-text">${escape(data.content.text)}</p>
+  <hr>
+  
+  <footer>
+    <p class = "time">${timeStamp}</p>
+    
+    <div class = "social">
+      <i class="fas fa-solid fa-flag"></i>
+      <i class="fas fa-solid fa-retweet"></i>
+      <i class="fas fa-solid fa-heart"></i>
+    </div>
+  </footer>
+
  </article>`);
 
   return $tweet;
 };
 
-const renderTweets = function (tweetArray) {
+const renderTweets = function(tweetArray) {
   const tweetContain = $('.tweet-container');
 
   const reverseTweets = tweetArray.reverse();

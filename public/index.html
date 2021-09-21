@@ -27,7 +27,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -37,53 +39,57 @@
 </head>
 
 <body>
+
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="logo">tweeter</span>
     <div class="rightNav pointer">
+      
       <div class="slogan">
         <p class="boldSlogan">Write</p>
         <p>&nbspa new tweet</p>
       </div>
+      
       <div class="navArrow">
         <i class="fas fa-angle-double-down"></i>
       </div>
+    
     </div>
   </nav>
 
-  <header class = "profile">
-      <div class = "imgCont">
-        <img class = "profPic" src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div class = "userName">
-        <h2><strong>Julie</strong> Fitzpatrick</h2>
-      </div>
+  <header class="profile">
+    <div class="imgCont">
+      <img class="profPic" src="/images/profile-hex.png" alt = "profile avatar">
+    </div>
+
+    <div class="userName">
+      <h2><strong>Julie</strong> Fitzpatrick</h2>
+    </div>
   </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
 
     <section class="new-tweet">
-      <div class = "error">
+      <div class="error">
         <div class="errorMessages"></div>
-    </div>
+      </div>
+
       <form class="form" action="/tweets" method="POST">
-        <label for="tweet-text" id = "hum">What are you humming about?</label>
+        <label for="tweet-text" id="hum">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
-        <div class = "bottomTweet">
-          <button class = "tweetButton" type="submit">Tweet</button>
+
+        <div class="bottomTweet">
+          <button class="tweetButton" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
 
-    <section class = "tweet-container"></section>
+    <section class="tweet-container"></section>
 
-    <br>
-
-    <div class = "upArrow pointer">
-      <i class="fas fa-chevron-circle-up" id = "backToTop"></i>
+    <div class="upArrow pointer">
+      <i class="fas fa-chevron-circle-up" id="backToTop"></i>
     </div>
 
   </main>

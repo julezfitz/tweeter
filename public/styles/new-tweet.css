@@ -1,4 +1,3 @@
-
 .tweetButton {
   background-color: #4056A1;
   color: #FFFF;
@@ -70,7 +69,7 @@ textarea {
 }
 
 .errorMessages > * {
-margin-right: 8px;
+  margin-right: 8px;
 }
 
 .new-tweet{
