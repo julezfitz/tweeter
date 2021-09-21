@@ -8,7 +8,7 @@ This page has a responsive design and changes view based on device and screen wi
 
 ### Desktop View
 
-!["Tweeter Desktop View"](https://github.com/julezfitz/tweeter/blob/master/docs/Desktop-View.png?raw=true  | width = 80)
+!["Tweeter Desktop View"]<img src="https://github.com/julezfitz/tweeter/blob/master/docs/Desktop-View.png?raw=true" width="100">
 
 ### Mobile Device View
 
