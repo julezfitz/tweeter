@@ -8,6 +8,7 @@ This page has a responsive design and changes view based on device and screen wi
 
 ### Desktop View
 
+!["Tweeter Desktop View"](https://github.com/julezfitz/tweeter/blob/master/docs/Desktop-View.png?raw=true)
 
 This project was created to fulfill my Lighthouse Labs program requirements, and included practicing HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express and MongoDB back-end skills.
 
