@@ -1,11 +1,18 @@
-@media only screen and (max-width: 420px) {
-  nav {
+@import "_variables.scss";
+
+@mixin veritcalAlign {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 420px) { 
+  nav{
     justify-content: space-between;
   }
 
   span.logo {
     font-size: 6vw;
-    width: 50%;
+    width: 50%
   }
 
   .rightNav {
@@ -14,14 +21,15 @@
     padding-top: 0;
   }
 }
+
 @media only screen and (min-width: 421px) and (max-width: 768px) {
-  nav {
+  nav{
     justify-content: space-between;
   }
-
+  
   span.logo {
     font-size: 6vw;
-    width: 50%;
+    width: 50%
   }
 
   .rightNav {
@@ -30,16 +38,18 @@
     padding-top: 0;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   nav {
     width: 100%;
     height: 5em;
-    background-color: #4056A1;
-  }
+    background-color: $desktop-nav-bkgrd-color;
+   }
 }
+
 nav {
   height: 100px;
-  color: #FFFF;
+  color: $nav-font-color;
   padding-left: 1.5em;
   padding-right: 1.5em;
   position: absolute;
@@ -51,7 +61,7 @@ nav {
 }
 
 span {
-  font-family: "Bungee", cursive;
+  font-family: $logo-font;
   font-size: 40px;
   display: inline-block;
   padding-top: 1em;
@@ -75,35 +85,33 @@ span {
     transform: translateY(-30%);
   }
 }
+
 .navArrow {
-  color: crimson;
-  display: flex;
-  justify-content: center;
+  color: $primary-nav-color;
+  @include veritcalAlign;
   animation: updown 2s ease infinite;
   display: visible;
 }
 
 .slogan {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-stack;
   display: flex;
   flex-direction: row;
   height: 2.2em;
 }
 
-.boldSlogan {
+.boldSlogan{
   font-weight: bold;
 }
 
-.pointer {
-  cursor: pointer;
-}
+.pointer {cursor: pointer;}
 
-.upArrow {
+.upArrow{
   display: none;
   z-index: 0;
   bottom: 0;
-  right: 1%;
+  right:1%;
   position: fixed;
   font-size: 70px;
-  color: crimson;
+  color: $primary-nav-color;
 }

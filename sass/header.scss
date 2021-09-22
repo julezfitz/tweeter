@@ -1,15 +1,21 @@
-header.profile {
-  position: relative;
+@import "_variables.scss";
+
+@mixin veritcalAlign {
   display: flex;
   justify-content: center;
+}
+
+header.profile {
+  position:relative;
+  @include veritcalAlign;
   flex-direction: column;
   align-items: center;
-  background-color: #e08e00;
+  background-color: $profile-background-color;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
   padding-top: 2em;
   padding-bottom: 2em;
   width: 100%;
-  z-index: 1;
+  z-index:1;
   position: fixed;
   top: 0;
 }
@@ -22,10 +28,10 @@ header.profile {
 .userName {
   font-size: 20px;
   padding-top: 1em;
-  margin-top: -60px;
+  margin-top:-60px;
   border-top: 0;
   z-index: 1;
-  color: #FFFF;
+  color: $nav-font-color;
   font-weight: lighter;
 }
 
@@ -34,19 +40,17 @@ h2 {
   font-weight: lighter;
 }
 
-strong {
-  font-weight: bold;
-}
+strong { font-weight: bold; }
 
 @media only screen and (min-width: 1024px) {
   header.profile {
     width: 40%;
     margin: 4em;
     margin-top: 5em;
-    position: relative;
+    position:relative;
     top: 3em;
     padding-top: 0;
-    padding-bottom: 0.25em;
+    padding-bottom:.25em;
     height: 270px;
   }
 }

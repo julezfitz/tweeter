@@ -1,6 +1,8 @@
+@import "_variables.scss";
+
 .tweetButton {
-  background-color: #4056A1;
-  color: #FFFF;
+  background-color: $desktop-nav-bkgrd-color;
+  color: $nav-font-color;
   font-size: 20px;
 }
 
@@ -8,16 +10,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Bungee", cursive;
+  font-family: $logo-font;
 }
 
 #tweet-text {
   background-color: inherit;
   border-top: none;
   border-left: none;
-  border-right: none;
+  border-right:none;
   border-width: 3px;
-  margin-bottom: 0.5em;
+  margin-bottom: .5em;
   height: 2em;
   font-size: 17px;
   font-weight: bold;
@@ -26,7 +28,7 @@
 #hum {
   font-weight: bold;
   font-size: 20px;
-  color: grey;
+  color: grey
 }
 
 .form {
@@ -49,13 +51,13 @@ textarea {
   font-size: 20px;
 }
 
-.error {
+.error{
   display: none;
 }
 
 .errorMessages {
-  background-color: #ec9393;
-  color: #FFFF;
+  background-color: rgb(236, 147, 147);
+  color: $nav-font-color;
   font-size: 20px;
   border: 1px solid indianred;
   border-radius: 4px;
@@ -72,6 +74,6 @@ textarea {
   margin-right: 8px;
 }
 
-.new-tweet {
+.new-tweet{
   display: none;
 }

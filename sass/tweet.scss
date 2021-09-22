@@ -1,9 +1,9 @@
 article.tweet {
   color: grey;
-  border: solid #646262;
+  border: solid rgb(100, 98, 98);
   margin-top: 2em;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 20px; 
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -13,7 +13,7 @@ article.tweet:hover {
 }
 
 article.tweet header {
-  font-size: 20px;
+  font-size: 20px;  
   font-weight: lighter;
   display: flex;
   flex-direction: row;
@@ -23,7 +23,7 @@ article.tweet header {
 }
 
 article.tweet hr {
-  border: 0.1em solid #646262;
+  border: 0.1em solid rgb(100, 98, 98);
   margin-top: 1.5em;
 }
 
@@ -37,10 +37,10 @@ article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+  }
 
 .username {
-  color: silver;
+  color:silver;
   font-weight: bold;
 }
 
@@ -60,7 +60,7 @@ article.tweet footer {
 }
 
 .social i:hover {
-  color: goldenrod;
+  color: goldenrod
 }
 
 .time {
@@ -74,7 +74,7 @@ article.tweet footer {
   margin-right: 0.5em;
 }
 
-.username-pic {
+.username-pic{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
